@@ -1,0 +1,39 @@
+1 - eu digitei "npm init -y
+2 - criei um arquivo server.js
+3 - digitei npm i express
+
+rotas, essa rotas http, elas me auxiliam a fazer coisas no site
+get - listar
+post - criar
+put - editar varios
+patch - editar um
+delete - deletar
+
+node --watch server.js
+esse comando serve para eu não precisar para o servidor, a cada atualização
+
+na rota pos, eu crio usuários e salvo eles na variável users.
+
+const users = []
+app.post('/usuarios',(req, res)=>{
+
+    users.push(req.body)
+    // aqui eu estou salvando os meu usuários
+    
+
+    res.send('deu certo')
+
+})
+
+e na rota get, eu mostros esses usuários salvos
+
+app.get('/usuarios', (req, res) =>{
+    res.json(users)
+    //  aqui eu estou mostrando os meus usuários, ele está no formato json, pq as infos foram salvas no formato json
+
+})
+
+Status: 200 OK
+isso significa que deu certo, apartir do status 200 indica que deu certo, outros como 400: erro do cliente front
+e 500: erro do servidor back
+
